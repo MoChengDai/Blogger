@@ -1,0 +1,250 @@
+/* 设置文档的字符编码为UTF-8 */
+@charset "utf-8";
+
+/* 设置body元素的样式 */
+body {
+	margin: 0;
+	/* 去除body的外边距 */
+	padding: 0;
+	/* 去除body的内边距 */
+	height: 100vh;
+	/* 设置body的高度为视口高度的100% */
+	width: 100vw;
+	/* 设置body的宽度为视口宽度的100% */
+	color: rgb(44, 59, 59);
+	/* 设置文本颜色 */
+	overflow: hidden;
+	/* 隐藏超出body范围的内容 */
+}
+
+/* 设置背景容器的样式 */
+.back {
+	display: flex;
+	/* 使用flex布局 */
+	justify-content: center;
+	/* 水平居中对齐子元素 */
+	align-items: center;
+	/* 垂直居中对齐子元素 */
+	width: 100%;
+	/* 设置宽度为父容器的100% */
+	height: 100%;
+	/* 设置高度为父容器的100% */
+	background-image: url("../image/loginback01.jpg");
+	/* 设置背景图片 */
+	background-repeat: no-repeat;
+	/* 背景图片不重复 */
+	background-attachment: fixed;
+	/* 背景图片固定，不随页面滚动 */
+	transform: scale(1.05);
+	/* 放大背景容器 */
+}
+
+/* 为.back元素添加伪元素::before，用于创建模糊效果 */
+.back::before {
+	content: "";
+	/* 伪元素的内容为空 */
+	width: 100%;
+	/* 设置宽度为父容器的100% */
+	height: 100%;
+	/* 设置高度为父容器的100% */
+	backdrop-filter: blur(10px);
+	/* 应用背景模糊效果 */
+	position: fixed;
+	/* 定位方式为固定定位，覆盖整个视口 */
+}
+
+/* 当鼠标悬停在.back元素上时，移除其伪元素::before的模糊效果 */
+.back:hover::before {
+	backdrop-filter: none;
+	/* 移除模糊效果 */
+}
+
+/* 设置登录框的样式 */
+.log {
+	display: flex;
+	/* 使用flex布局 */
+	flex-direction: column;
+	/* 子元素垂直排列 */
+	align-items: center;
+	/* 子元素在交叉轴上居中对齐 */
+	min-width: 500px;
+	/* 设置最小宽度 */
+	min-height: 300px;
+	/* 设置最小高度 */
+	background-color: rgba(50, 59, 88, 0.7);
+	/* 设置背景颜色及透明度 */
+	overflow: hidden;
+	/* 隐藏超出框范围的内容 */
+	border-radius: 10px;
+	/* 设置圆角 */
+	box-shadow: 0 0 10px rgba(50, 59, 88, 0.8);
+	/* 设置阴影效果 */
+	backdrop-filter: blur(5px);
+	/* 应用背景模糊效果 */
+}
+
+/* 设置登录框标题的样式 */
+.logtitle {
+	font-size: 40px;
+	/* 设置字体大小 */
+	font-weight: bolder;
+	/* 设置字体加粗 */
+	-webkit-background-clip: text;
+	/* 背景裁剪为文本 */
+	background-image:
+		linear-gradient(90deg,
+			rgba(98, 201, 248, 0.6),
+			rgba(243, 111, 255, 0.6),
+			rgba(247, 129, 129, 0.6),
+			rgba(241, 239, 104, 0.6),
+			rgba(117, 226, 84, 0.6),
+			rgba(98, 201, 248, 0.6));
+	/* 设置文本的背景渐变 */
+	background-size: 800%;
+	/* 设置背景渐变的大小 */
+	animation: gradient 30s infinite linear;
+	/* 应用动画 */
+	color: transparent;
+	/* 文本颜色设置为透明，显示背景渐变 */
+	line-height: 100px;
+	/* 设置行高 */
+}
+
+/* 设置登录框内文本输入框的样式 */
+.logbody .txt {
+	border: none;
+	/* 去除边框 */
+	border-bottom: 1px solid rgba(18, 21, 32, 0.7);
+	/* 设置底部边框 */
+	background: transparent;
+	/* 背景设置为透明 */
+	transition: 0.3s;
+	/* 设置过渡效果 */
+	height: 30px;
+	/* 设置高度 */
+	padding-top: 10px;
+	/* 设置内上边距 */
+}
+
+/* 当鼠标悬停在文本输入框上时，改变其样式 */
+.logbody .txt:hover {
+	transform: scaleX(1.1);
+	/* 水平放大 */
+}
+
+/* 当文本输入框获得焦点时，改变其样式 */
+.logbody .txt:focus {
+	outline: none;
+	/* 去除焦点时的轮廓线 */
+	border-bottom: 1px solid rgba(137, 160, 245, 0.7);
+	/* 改变底部边框颜色 */
+	color: rgba(137, 160, 245, 0.7);
+	/* 改变文本颜色 */
+}
+
+/* 设置登录按钮的样式 */
+.logbody .sub {
+	width: 50%;
+	/* 设置宽度 */
+	height: 45px;
+	/* 设置高度 */
+	margin-top: 10%;
+	/* 设置上边距 */
+	margin-left: 10%;
+	/* 设置左边距 */
+	border: none;
+	/* 去除边框 */
+	border-radius: 10px;
+	/* 设置圆角 */
+	background-color: rgba(86, 116, 156, 0.8);
+	/* 设置背景颜色及透明度 */
+	font-size: 16px;
+	/* 设置字体大小 */
+	font-family: "幼圆";
+	/* 设置字体 */
+	color: rgb(180, 216, 233);
+	/* 设置文本颜色 */
+}
+
+/* 添加样式使按钮在同一行显示 */
+.buttons-container {
+	width: auto;
+	display: flex;
+	gap: 10px;
+	/* 按钮之间的间距 */
+}
+
+.buttons-container .sub {
+	flex: 1;
+	/* 让按钮平分可用空间 */
+}
+
+/* 当鼠标悬停在登录按钮上时，改变其样式 */
+.logbody .sub:hover {
+	background-color: rgba(118, 155, 202, 0.8);
+	/* 改变背景颜色及透明度 */
+	box-shadow: 0 0 10px rgba(118, 155, 202, 0.8);
+	/* 添加阴影效果 */
+}
+
+/* 设置“游客登陆”按钮的样式 */
+.ykbt {
+	margin-top: 20px;
+	/* 设置上边距 */
+	margin-left: 12.5%;
+	/* 设置左边距 */
+	border: none;
+	/* 去除边框 */
+	background-color: transparent;
+	/* 背景设置为透明 */
+}
+
+/* 当鼠标悬停在“游客登陆“按钮上时，改变其文本颜色 */
+.ykbt:hover {
+	color: rgb(64, 160, 216);
+	/* 改变文本颜色 */
+}
+
+/* 设置“前往注册”按钮的样式 */
+.qwzc {
+	margin-top: 20px;
+	/* 设置上边距 */
+	margin-left: 12.5%;
+	/* 设置左边距 */
+	border: none;
+	/* 去除边框 */
+	background-color: transparent;
+	/* 背景设置为透明 */
+}
+
+/* 当鼠标悬停在“前往注册“按钮上时，改变其文本颜色 */
+.qwzc:hover {
+	color: rgb(64, 160, 216);
+	/* 改变文本颜色 */
+}
+
+/* 设置“返回登陆”按钮的样式 */
+.fhdl {
+	margin-top: 20px;
+	/* 设置上边距 */
+	margin-left: 12.5%;
+	/* 设置左边距 */
+	border: none;
+	/* 去除边框 */
+	background-color: transparent;
+	/* 背景设置为透明 */
+}
+
+/* 当鼠标悬停在“返回登陆“按钮上时，改变其文本颜色 */
+.fhdl:hover {
+	color: rgb(64, 160, 216);
+	/* 改变文本颜色 */
+}
+
+/* 定义动画gradient，用于登录框标题的背景渐变 */
+@keyframes gradient {
+	100% {
+		background-position: -800% 0%;
+		/* 动画结束时，背景位置移动到-800% 0% */
+	}
+}

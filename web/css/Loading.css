@@ -1,0 +1,70 @@
+/* 设置文档的字符编码为UTF-8 */
+@charset "utf-8";
+
+/* 定义一个名为.con的类，用于控制容器的样式 */
+.con {
+	/* 将容器的上边距设置为视口高度的-100%，这通常用于将元素移出初始视口 */
+	margin-top: -100vh;
+	/* 在主轴方向上居中对齐子元素（需要配合flex容器使用） */
+	justify-content: center;
+	/* 在交叉轴方向上居中对齐子元素（需要配合flex容器使用） */
+	align-items: center;
+	/* 设置容器的宽度为父容器的100% */
+	width: 100%;
+	/* 设置容器的高度为父容器的100% */
+	height: 100%;
+	/* 应用背景模糊效果，模糊半径为10px */
+	backdrop-filter: blur(10px);
+	/* 隐藏容器，不显示 */
+	display: none;
+}
+
+/* 定义一个名为.load的类，用于控制加载动画的外层容器 */
+.load {
+	/* 设置元素的定位方式为相对定位 */
+	position: relative;
+	/* 使用flex布局，使子元素可以灵活排列 */
+	display: flex;
+}
+
+/* 定义一个名为.dot的类，用于控制加载动画中的点 */
+.load .dot {
+	/* 设置元素的定位方式为相对定位 */
+	position: relative;
+	/* 设置点的宽度为20px */
+	width: 20px;
+	/* 设置点的高度为20px */
+	height: 20px;
+	/* 设置背景图像固定，但在此上下文中未使用背景图像 */
+	background-attachment: fixed;
+	/* 设置点的背景颜色为淡蓝色 */
+	background: rgb(120, 214, 214);
+	/* 设置点之间的外边距，垂直方向为20px，水平方向为20px（第一个点除外） */
+	margin: 20px 0 0 20px;
+	/* 设置点的边框为圆形 */
+	border-radius: 50%;
+	/* 应用动画，动画名称为dotanim，持续时间1秒，无限次循环，线性速度 */
+	animation: dotanim 1s infinite linear;
+	/* 设置动画延迟，根据--i变量的值计算，每个点的延迟不同 */
+	animation-delay: calc(0.1s * var(--i));
+}
+
+/* 定义动画dotanim，用于控制加载点的缩放效果 */
+@keyframes dotanim {
+
+	/* 动画开始，点缩小到原始尺寸的20% */
+	0% {
+		transform: scale(0.2);
+	}
+
+	/* 动画进行到10%时，点恢复到原始尺寸 */
+	10% {
+		transform: scale(1);
+	}
+
+	/* 动画进行到50%和结束时，点再次缩小到原始尺寸的20% */
+	50%,
+	100% {
+		transform: scale(0.2);
+	}
+}

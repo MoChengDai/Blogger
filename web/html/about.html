@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>关于</title>
+		<link rel="icon" href="../image/favicon.ico">
+		<link rel="stylesheet" href="../css/nav.css">
+		<link rel="stylesheet" href="../css/body.css">
+		<link rel="stylesheet" href="../css/about.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+	</head>
+	<body>
+		<nav>
+			<div class="navtitle"><strong>MoCheng</strong>|MY PROFILE</div>
+			<a href="home.html">HOME</a>
+			<a href="about.html">ABOUT</a>
+			<a href="blog.html">BLOG</a>
+			<a href="album.html">ALBUM</a>
+			<a href="join.html">JOIN</a>
+			<a href="_login.html">LOGOUT</a>
+			<div class="navanim about"></div>
+			<div class="none"></div>
+		</nav>
+		<div class="mid">
+			<div class="headimg">
+				<h1>ABOUT ME</h1>
+			</div>
+			<div class="ab a1">
+				<div class="txt">
+					<h2>关于我</h2>
+					<p>&emsp;&emsp;本人网上冲浪署名是MoCheng，中文署名是墨程。</p>
+					<p>&emsp;&emsp;四川商务职业学院云计算技术应用专业大一学生，毕业于四川成都财贸职业高级中学校。</p>
+					<p>&emsp;&emsp;喜欢编程、音乐、希望以后能够从事有关专业方面的工作，虽然现在什么都不会但还是会努力学习的。</p>
+				</div>
+				<div class="imghid">
+					<div class="img"></div>
+				</div>
+			</div>
+			<div class="ab a2">
+				<div class="imghid">
+					<div class="img"></div>
+				</div>
+				<div class="txt">
+					<h2>关于网站</h2>
+					<p>&emsp;&emsp;本网站搭建初衷是为了学习，于2021年制作完成且正好2024年大一网页设计期末作业又重新翻出来使用。</p>
+					<p>&emsp;&emsp;小声蛐蛐：网站最初查询了大量资料，问了很多当时职高的老师，以至于差点被拉黑处理，虽然现在还是不懂但是有ChatGpt帮我啊。
+					<p>&emsp;&emsp;网站的登录注册方面用的是js文件，由于当初没学后端且目前大一也没开设这门课所以没弄后续有时间会再去研究研究的。</p>
+				</div>
+			</div>
+			<div class="ab a3">
+				<div class="txt">
+					<h2>每日一言</h2>
+					<p>&emsp;&emsp;<h3 class="hitokoto" id="yiyancon"></h3></p>
+					<script type="text/javascript"
+						src="https://international.v1.hitokoto.cn?encode=js&amp;charset=utf-8&amp;&amp;c=j&amp;c=k&amp;c=l">
+					</script>
+					<!-- 这个地方是调用一言接口 -->
+				</div>
+				<div class="imghid">
+					<div class="img">
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="foot">
+			<p>@2021-2024 | BY:MoCheng</p>
+			<p>网页版权归MoCheng所有</p>
+		</footer>
+		<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			/* 鼠标文字特效 */
+			var a_idx = 0;
+			jQuery(document).ready(function($) {
+				$("body").click(function(e) {
+					var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+					var $i = $("<span/>").text(a[a_idx]);
+					a_idx = (a_idx + 1) % a.length;
+					var x = e.pageX,
+						y = e.pageY;
+					$i.css({
+						"z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+						"top": y - 20,
+						"left": x,
+						"position": "absolute",
+						"font-weight": "bold",
+						"color": "#ff6651"
+					});
+					$("body").append($i);
+					$i.animate({
+							"top": y - 180,
+							"opacity": 0
+						},
+						1500,
+						function() {
+							$i.remove();
+						});
+				});
+			});
+		</script>
+		<meting-js server="netease" type="playlist" id="12916693470" fixed="true" autoplay="true" loop="all"
+			order="random" preload="auto" list-folded="ture" list-max-height="1000px" lrc-type="1">
+		</meting-js>
+	</body>
+</html>

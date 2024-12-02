@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>注册</title>
+		<link rel="icon" href="../image/favicon.ico">
+		<link rel="stylesheet" href="../css/login.css">
+		<link rel="stylesheet" href="../css/Loading.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+	</head>
+	<body>
+		<div class="back" id="back">
+			<div class="log" id="log">
+				<div class="logtitle">Register</div>
+				<p></p>
+				<form action="home.html" id="logbody" class="logbody" onsubmit="return login()">
+					<input type="text" id="zczh" size="20" class="txt" placeholder="账户">
+					<br>
+					<input type="password" id="zcmm" size="20" class="txt" placeholder="密码">
+					<br>
+					<input type="password" id="qrmm" size="20" class="txt" placeholder="确认密码">
+					<br>
+					<input type="text" id="sjh" size="20" class="txt" placeholder="手机号">
+					<br>
+					<input type="text" id="zcyx" size="20" class="txt" placeholder="注册邮箱">
+					<div class="buttons-container">
+						<input type="button" value="注册" id="sub" class="sub">
+					</div>
+					<div class="buttons-container">
+						<input type="button" value="游客登录" id="ykbt" class="ykbt">
+						<a><input type="button" value="返回登陆" id="fhdl" class="fhdl"></a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="con" id="con">
+			<div class="load">
+				<div class="dot" style="--i:0"></div>
+				<div class="dot" style="--i:1"></div>
+				<div class="dot" style="--i:2"></div>
+				<div class="dot" style="--i:3"></div>
+				<div class="dot" style="--i:4"></div>
+				<div class="dot" style="--i:5"></div>
+				<div class="dot" style="--i:6"></div>
+			</div>
+		</div>
+		<script src="../js/register.js"></script>
+		<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			/* 鼠标文字特效 */
+			var a_idx = 0;
+			jQuery(document).ready(function($) {
+				$("body").click(function(e) {
+					var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+					var $i = $("<span/>").text(a[a_idx]);
+					a_idx = (a_idx + 1) % a.length;
+					var x = e.pageX,
+						y = e.pageY;
+					$i.css({
+						"z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+						"top": y - 20,
+						"left": x,
+						"position": "absolute",
+						"font-weight": "bold",
+						"color": "#ff6651"
+					});
+					$("body").append($i);
+					$i.animate({
+							"top": y - 180,
+							"opacity": 0
+						},
+						1500,
+						function() {
+							$i.remove();
+						});
+				});
+			});
+		</script>
+		<meting-js server="netease" type="playlist" id="12916693470" fixed="true" autoplay="true" loop="all"
+			order="random" preload="auto" list-folded="ture" list-max-height="1000px" lrc-type="1">
+		</meting-js>
+	</body>
+</html>

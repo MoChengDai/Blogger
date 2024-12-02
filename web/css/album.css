@@ -1,0 +1,101 @@
+/* 设置字符编码为UTF-8 */
+@charset "utf-8";
+
+/* .mid类用于设置一个容器，其高度和宽度分别占据视口（viewport）的100% */
+.mid {
+	height: 100vh;
+	/* 视口高度的100% */
+	width: 100vw;
+	/* 视口宽度的100% */
+}
+
+/* .banner类用于设置横幅的样式 */
+.banner {
+	list-style: none;
+	/* 移除列表项的默认样式 */
+	position: absolute;
+	/* 绝对定位 */
+	padding: 0;
+	/* 移除内边距 */
+	margin: auto;
+	/* 自动外边距，用于水平居中 */
+	top: 0;
+	/* 距离顶部0 */
+	left: 0;
+	/* 距离左侧0 */
+	bottom: 0;
+	/* 距离底部0 */
+	right: 0;
+	/* 距离右侧0 */
+	width: 1150px;
+	/* 横幅宽度 */
+	height: 421px;
+	/* 横幅高度 */
+	animation: imgload1 1s linear;
+	/* 应用名为imgload1的动画，持续1秒，线性速度 */
+}
+
+/* .banner li类用于设置横幅中每个列表项的样式 */
+.banner li {
+	float: left;
+	/* 左浮动 */
+	position: absolute;
+	/* 绝对定位 */
+	left: 0px;
+	/* 距离左侧0 */
+	transition-duration: 0.4s;
+	/* 过渡效果持续时间0.4秒 */
+	overflow: hidden;
+	/* 隐藏溢出内容 */
+}
+
+/* .banner img类用于设置横幅中图片的样式 */
+.banner img {
+	transition: all .5s;
+	/* 所有属性的过渡效果持续0.5秒 */
+	filter: grayscale(0.5);
+	/* 应用50%的灰度滤镜 */
+}
+
+/* .banner img:hover类用于设置当鼠标悬停在横幅图片上的样式 */
+.banner img:hover {
+	transform: scale(1.1);
+	/* 图片放大到原来的1.1倍 */
+	filter: grayscale(0);
+	/* 移除灰度滤镜 */
+}
+
+/* .banner div类用于设置横幅底部的导航点样式 */
+.banner div {
+	width: 20px;
+	/* 宽度 */
+	height: 20px;
+	/* 高度 */
+	position: absolute;
+	/* 绝对定位 */
+	border-radius: 50%;
+	/* 圆角半径为50%，形成圆形 */
+	background: rgb(123, 168, 175);
+	/* 背景颜色 */
+	float: left;
+	/* 左浮动 */
+	bottom: -100px;
+	/* 距离底部-100px，即向上移动100px */
+}
+
+/* @keyframes imgload1定义了一个名为imgload1的动画 */
+@keyframes imgload1 {
+	0% {
+		opacity: 0;
+		/* 初始透明度为0 */
+		margin-top: 300px;
+		/* 初始上边距为300px */
+	}
+
+	100% {
+		opacity: 1;
+		/* 动画结束时透明度为1 */
+		margin-top: 170px;
+		/* 动画结束时上边距为170px */
+	}
+}

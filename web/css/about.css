@@ -1,0 +1,251 @@
+/* 设置文档的字符编码为utf-8 */
+@charset "utf-8";
+
+/* 类名.mid的样式设置 */
+.mid {
+	height: 180vh;
+	/* 高度设置为视窗高度的180% */
+	width: 100vw;
+	/* 宽度设置为视窗宽度的100% */
+	display: flex;
+	/* 使用flex布局 */
+	flex-direction: column;
+	/* flex布局方向为列方向 */
+}
+
+/* 类名.headimg的样式设置 */
+.headimg {
+	top: 0px;
+	/* 顶部对齐 */
+	height: 250px;
+	/* 高度设置为250px */
+	width: 100%;
+	/* 宽度设置为父容器的100% */
+	background-image: url("../image/headimg2.jpg");
+	/* 背景图片 */
+	background-size: 1540px;
+	/* 背景图片大小 */
+	background-repeat: no-repeat;
+	/* 背景图片不重复 */
+	background-position-y: -190px;
+	/* 背景图片在y轴上的位置 */
+	background-position-x: -150px;
+	/* 背景图片在x轴上的位置 */
+	overflow: hidden;
+	/* 溢出隐藏 */
+	border-bottom: 5px solid rgb(58, 83, 85);
+	/* 底部边框 */
+	animation: headload 0.9s linear;
+	/* 动画效果 */
+}
+
+/* 类名.headimg内h1标签的样式设置 */
+.headimg h1 {
+	color: rgb(92, 136, 177);
+	/* 文字颜色 */
+	font-size: 5em;
+	/* 字体大小 */
+	text-align: center;
+	/* 文字居中对齐 */
+	line-height: 200px;
+	/* 行高 */
+}
+
+/* 类名.mid内.ab的样式设置 */
+.mid .ab {
+	width: 800px;
+	/* 宽度 */
+	height: 300px;
+	/* 高度 */
+	box-shadow: 0 0 15px rgb(83, 103, 110);
+	/* 盒子阴影 */
+	background: rgba(71, 142, 175, 0.2);
+	/* 背景颜色 */
+	border-radius: 15px;
+	/* 边框圆角 */
+	backdrop-filter: blur(5px);
+	/* 背景模糊效果 */
+	display: flex;
+	/* 使用flex布局 */
+	overflow: hidden;
+	/* 溢出隐藏 */
+	margin-top: 40px;
+	/* 上边距 */
+}
+
+/* 分别为.a1、.a2、.a3内.img标签设置背景图片 */
+.a1 .img {
+	background-image: url("../image/about1.jpg");
+}
+
+.a2 .img {
+	background-image: url("../image/about2.jpg");
+}
+
+.a3 .img {
+	background-image: url("../image/about3.jpg");
+}
+
+/* 类名.ab内p标签的样式设置 */
+.ab p {
+	word-wrap: break-word;
+	/* 单词换行 */
+	color: rgb(41, 68, 68);
+	/* 文字颜色 */
+	line-height: 24px;
+	/* 行高 */
+}
+
+/* 类名.ab内.txt的样式设置 */
+.ab .txt {
+	width: 400px;
+	/* 宽度 */
+	margin: 0 50px 0 50px;
+	/* 外边距 */
+}
+
+/* 类名.ab内h2标签的样式设置 */
+.ab h2 {
+	text-align: center;
+	/* 文字居中对齐 */
+	color: rgb(51, 86, 114);
+	/* 文字颜色 */
+}
+
+/* 类名.ab内.img的样式设置 */
+.ab .img {
+	width: 300px;
+	/* 宽度 */
+	height: 100%;
+	/* 高度 */
+	background-size: cover;
+	/* 背景图片覆盖 */
+	background-position: center;
+	/* 背景图片居中 */
+	filter: grayscale(0.3);
+	/* 灰度滤镜 */
+	opacity: 0.8;
+	/* 透明度 */
+	transition: all 0.5s ease 0s;
+	/* 过渡效果 */
+}
+
+/* 类名.ab内.img的hover效果 */
+.ab .img:hover {
+	transform: scale(1.1);
+	/* 鼠标悬停时放大 */
+}
+
+/* 类名.ab内.imghid的样式设置（但此处在CSS中未使用） */
+.ab .imghid {
+	overflow: hidden;
+}
+
+/* 分别为.a1、.a2、.a3设置不同的margin-left和动画效果 */
+.a1 {
+	margin-left: 40%;
+	/* 左外边距 */
+	animation: a1load 2.5s linear;
+	/* 动画效果 */
+	transition: 0.5s 1s;
+	/* 过渡效果 */
+}
+
+.a2 {
+	margin-left: 10%;
+	/* 左外边距 */
+	animation: a2load 3.6s linear;
+	/* 动画效果 */
+	transition: 0.5s;
+	/* 过渡效果 */
+}
+
+.a3 {
+	margin-left: 40%;
+	/* 左外边距 */
+	animation: a3load 4.8s linear;
+	/* 动画效果 */
+	transition: 0.5s;
+	/* 过渡效果 */
+}
+
+/* 类名.a3内h2标签的特殊样式设置 */
+.a3 h2 {
+	margin-top: 100px;
+	/* 上边距 */
+	line-height: 50px;
+	/* 行高 */
+}
+
+/* 定义动画a1load */
+@keyframes a1load {
+	0% {
+		opacity: 0;
+	}
+
+	/* 初始透明度为0 */
+	70% {
+		opacity: 0;
+		margin-top: 100px;
+	}
+
+	/* 动画70%时透明度为0，上边距为100px */
+	100% {
+		opacity: 1;
+		margin-top: 40px;
+	}
+
+	/* 动画结束时透明度为1，上边距为40px */
+}
+
+/* 定义动画a2load */
+@keyframes a2load {
+	0% {
+		opacity: 0;
+	}
+
+	/* 初始透明度为0 */
+	80% {
+		opacity: 0;
+	}
+
+	/* 动画80%时透明度为0 */
+	100% {
+		opacity: 1;
+	}
+
+	/* 动画结束时透明度为1 */
+}
+
+/* 定义动画a3load */
+@keyframes a3load {
+	0% {
+		opacity: 0;
+	}
+
+	/* 初始透明度为0 */
+	90% {
+		opacity: 0;
+	}
+
+	/* 动画90%时透明度为0 */
+	100% {
+		opacity: 1;
+	}
+
+	/* 动画结束时透明度为1 */
+}
+
+/* 定义动画headload */
+@keyframes headload {
+	0% {
+		height: 0px;
+	}
+
+	/* 初始高度为0 */
+	100% {
+		height: 240px;
+	}
+
+	/* 动画结束时高度为240px */
+}

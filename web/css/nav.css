@@ -1,0 +1,171 @@
+/* 设置文档的字符编码为utf-8 */
+@charset "utf-8";
+
+/* 设置body元素的边距和内边距为0 */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* 设置导航栏的样式 */
+nav {
+	position: fixed;
+	/* 固定定位 */
+	display: flex;
+	/* 使用弹性盒子布局 */
+	justify-content: space-around;
+	/* 子元素之间的空间均匀分布 */
+	align-items: center;
+	/* 子元素垂直居中 */
+	width: 1540px;
+	/* 宽度 */
+	height: 70px;
+	/* 高度 */
+	top: 0px;
+	/* 距离顶部0px */
+	background-color: rgb(123, 161, 197);
+	/* 背景颜色 */
+	overflow: hidden;
+	/* 隐藏溢出内容 */
+	font-size: 20px;
+	/* 字体大小 */
+	color: rgb(234, 247, 255);
+	/* 字体颜色 */
+	opacity: 0.8;
+	/* 不透明度 */
+	z-index: 1000;
+	/* 堆叠顺序，确保位于其他元素之上 */
+}
+
+/* 为具有.homenav类的元素设置动画效果 */
+.homenav {
+	animation: load2 1s linear;
+	/* 使用load2动画，持续1秒，线性速度 */
+}
+
+/* 当鼠标悬停在nav上时，改变其不透明度 */
+nav:hover {
+	opacity: 0.95;
+}
+
+/* 设置nav内的.navtitle类的样式 */
+nav .navtitle {
+	padding-left: 50px;
+	/* 左内边距 */
+	width: 30%;
+	/* 宽度 */
+}
+
+/* 设置.navtitle内的strong标签的样式 */
+nav .navtitle strong {
+	font-size: 50px;
+	/* 字体大小 */
+	font-weight: bolder;
+	/* 字体加粗 */
+}
+
+/* 设置nav内的链接的样式 */
+nav a {
+	display: block;
+	/* 块级显示 */
+	justify-content: center;
+	/* 居中内容（此处可能无效，因为a不是flex容器） */
+	text-decoration: none;
+	/* 无下划线 */
+	z-index: 1;
+	/* 堆叠顺序 */
+	height: inherit;
+	/* 继承父元素高度 */
+	line-height: 70px;
+	/* 行高 */
+	width: 120px;
+	/* 宽度 */
+	text-align: center;
+	/* 文本居中 */
+	font-weight: bolder;
+	/* 字体加粗 */
+	color: rgb(84, 109, 158);
+	/* 字体颜色 */
+	transition: 0.5s;
+	/* 过渡效果 */
+}
+
+/* 设置.navanim类的样式，用于链接的背景动画效果 */
+nav .navanim {
+	position: absolute;
+	/* 绝对定位 */
+	height: inherit;
+	/* 继承父元素高度 */
+	z-index: 0;
+	/* 堆叠顺序 */
+	background: rgb(155, 200, 240);
+	/* 背景颜色 */
+	border-radius: 5px;
+	/* 边框圆角 */
+	left: 0px;
+	/* 初始位置 */
+	transition: all .5s ease 0s;
+	/* 所有属性的过渡效果 */
+	width: 120px;
+	/* 宽度 */
+}
+
+/* 为不同的链接和对应的.navanim设置不同的位置 */
+/* 注意：这里的选择器写法可能不是最佳实践，因为它依赖于链接的顺序和特定的兄弟选择器 */
+nav .home,
+a:nth-child(2):hover~.navanim {
+	left: 510px;
+	width: 120px;
+}
+
+nav .about,
+a:nth-child(3):hover~.navanim {
+	left: 630px;
+	width: 120px;
+}
+
+nav .blog,
+a:nth-child(4):hover~.navanim {
+	left: 750px;
+	width: 120px;
+}
+
+nav .album,
+a:nth-child(5):hover~.navanim {
+	left: 870px;
+	width: 120px;
+}
+
+nav .join,
+a:nth-child(6):hover~.navanim {
+	left: 990px;
+	width: 120px;
+}
+
+nav ._login,
+a:nth-child(7):hover~.navanim {
+	left: 1110px;
+	width: 120px;
+}
+
+/* 设置.none类的宽度 */
+nav .none {
+	width: 20%;
+}
+
+/* 定义load2动画 */
+@keyframes load2 {
+	0% {
+		top: -80px;
+		/* 初始位置在顶部之上 */
+		opacity: 0;
+		/* 初始不透明度为0 */
+	}
+
+	100% {
+		top: 0px;
+		/* 最终位置在顶部 */
+		opacity: 0.8;
+		/* 最终不透明度 */
+	}
+}
